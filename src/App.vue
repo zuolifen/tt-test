@@ -1,29 +1,22 @@
 <template>
   <div id="app">
-    <span  >{{message}}</span>
-    <button @click="reverseMsg">点击切换</button>
+    <Header></Header>
+    <router-view></router-view>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-
+import Header from '@/components/header/header'
+import Footer from '@/components/footer/footer'
 export default {
   name: 'App',
-  data:function(){
-    return {
-      message:'hello,你好'
-    }
-  },
-  components: {
-  },
-  methods:{
-    reverseMsg:function(){
-      this.message = this.message.split('').reverse().join('')
-    }
+  components:{
+    Header,
+    Footer
   }
 }
 </script>
 
-<style>
-
+<style lang="less">
 </style>
